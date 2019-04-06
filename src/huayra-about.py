@@ -4,6 +4,7 @@
 # Copyright 2015 - Ignacio Juan Martín Benedetti <tranceway@gmail.com>
 # Copyleft 2015 - Diego Accorinti (mejoras memoria y modelo de cpu)
 # Copyleft 2018 - Diego Accorinti (cambio diseño Huayra 4 - agregado de información sobre particiones y repositorios al copiar datos para reporte.)
+# Copyright 2019 Alvarito050506 <donfrutosgomez@gmail.com>
 
 # License: GPLv3 (see http://www.gnu.org/licenses/gpl.html)
 
@@ -57,6 +58,11 @@ def on_close_clicked(widget):
     gtk.main_quit()
     return False
 
+def menu_item_save_response(widget):
+	home = os.getenv("HOME")
+	info = open(home + "/huayra-info.txt", "w")
+	info.write(info_table.solo_texto())
+	info.close()
 
 # row -> present
 # gui
@@ -67,7 +73,7 @@ window_icon = os.path.join(APP_PATH, 'media', 'huayra-menu-huayra.svg')
 window.set_icon_from_file(window_icon)
 
 width = 600
-height = 430
+height = 475
 window.set_geometry_hints(window, width, height, width, height, width, height, 0, 0, 1.5, 1.5)
 window.set_position(gtk.WIN_POS_CENTER)
 window.connect("delete-event", on_window_delete_event)
@@ -107,6 +113,11 @@ menu_item_copy.set_tooltip_text("Copiar al portapapeles")
 menu.append(menu_item_copy)
 menu_item_copy.connect("activate", menu_item_copy_response, " Texto")
 menu_item_copy.show()
+menu_item_save = gtk.MenuItem("Guardar como texto plano")
+menu_item_save.set_tooltip_text("Guardar")
+menu.append(menu_item_save)
+menu_item_save.connect("activate", menu_item_save_response)
+menu_item_save.show()
 button_menu = gtk.Button()
 
 image = gtk.Image()
