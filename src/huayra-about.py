@@ -73,7 +73,7 @@ window_icon = os.path.join(APP_PATH, 'media', 'huayra-menu-huayra.svg')
 window.set_icon_from_file(window_icon)
 
 width = 600
-height = 475
+height = 470
 window.set_geometry_hints(window, width, height, width, height, width, height, 0, 0, 1.5, 1.5)
 window.set_position(gtk.WIN_POS_CENTER)
 window.connect("delete-event", on_window_delete_event)
