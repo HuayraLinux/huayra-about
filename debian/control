@@ -10,7 +10,7 @@ Vcs-Git: https://github.com/HuayraLinux/huayra-about
 Package: huayra-about
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}, base-files(>=7.1), lsb-release,
- coreutils (>=8.13), procps, util-linux (>=2.20.1), python-gtk2, python-apt
+ coreutils (>=8.13), procps, util-linux (>=2.20.1), python-gtk2, python-apt, wget (>=1.18)
 Description: Acerca de Huayra
  Lista información referida a las versiones de la instalación de
  Huayra, Debian, versión del Kernel, memoria y procesador. Esta información se presenta en una ventana y/o
