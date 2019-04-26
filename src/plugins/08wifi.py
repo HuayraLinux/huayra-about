@@ -31,4 +31,4 @@ if __name__ == '__main__':
     null
 
 else:
-    info_table.add_row_to_table(markup.label_set_markup(Info.label()), markup.text_set_markup(Info.text()), 2, "Placas de Red")
+    info_table.add_row_to_table(markup.label_set_markup(Info.label()), markup.text_set_markup(Info.text()), 10, "Placas de Red")

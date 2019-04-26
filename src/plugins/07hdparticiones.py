@@ -33,5 +33,5 @@ if __name__ == '__main__':
     null
 
 else:
-    info_table.add_row_to_table(markup.label_set_markup(Info.label()), markup.text_set_markup(Info.text()), 2, "Discos y Particiones.")
+    info_table.add_row_to_table(markup.label_set_markup(Info.label()), markup.text_set_markup(Info.text()), 9, "Discos y Particiones.")
 
